@@ -2,7 +2,12 @@
 
 _When_ the user creates a new account or resets a password according to the user management process, they need to create an informational email draft with the user's login and a link to the working environment.
 
-_Given_ the application accepts and validates the information and returns a structured email draft in a new Outlook window. Information: sender email address; receiver email address; user login; link to the environment.
+_Given_ the application accepts and validates the following information:
+
+- Sender email address
+- Receiver email address
+- User login
+- Link to the environment
 
 _Then_ the application should open a new window in MS Outlook, allow the user to make minor edits, and send the email from the working email address.
 
@@ -23,6 +28,7 @@ _Then_ the application should open a new window in MS Outlook, allow the user to
 - Email preview
 - "Create an email draft" button
 - Outlook opens created draft
+- User can edit the email text in the application before opening the draft in Outlook
 
 ### Stack
 
