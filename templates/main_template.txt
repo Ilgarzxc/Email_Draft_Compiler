@@ -1,0 +1,16 @@
+Dear {recepient_name},
+
+Your account in {environment_name} has been created. 
+
++------------------------+-------------------------------------+
+| {environment_name}     | {environment_link}                  |
++------------------------+-------------------------------------+
+| {username}             |  {user_login}                       |
++------------------------+-------------------------------------+
+
+Password sent in a separate email. Please check your mailbox.
+
+If you experience issues with your account, please contact us at ilgar.gurbanov.90@gmail.com for further assistance. 
+
+Best regards,
+{signature}
