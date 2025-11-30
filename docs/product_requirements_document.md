@@ -6,7 +6,9 @@ _Given_ the application accepts and validates the following information:
 
 - Sender email address
 - Receiver email address
+- Receiver first name
 - User login
+- Environment name
 - Link to the environment
 
 _Then_ the application should open a new window in MS Outlook, allow the user to make minor edits, and send the email from the working email address.
