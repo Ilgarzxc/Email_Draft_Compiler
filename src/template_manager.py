@@ -22,17 +22,17 @@ Best regards,
 
 
 
-def process_user_input(recipient_name: str, username: str, user_login: str, signature: str) -> str:
+def process_user_input(recipient_name: str, username: str, user_login: str, sender_name: str) -> str:
 
     validate_recipient_name(recipient_name)
     validate_username(username)
     validate_user_login(user_login)
-    validate_signature(signature)
+    validate_sender_name(sender_name)
 
     return assemble_email(
         recipient_name=recipient_name,
         username=username,
         user_login=user_login,
-        signature=signature
+        sender_name=sender_name
     )
 

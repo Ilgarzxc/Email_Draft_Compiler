@@ -1,8 +1,8 @@
 import re
 
 #Compile regex validation for recipient name
-recipient_name_regex = re.compile(r"^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$")
-username_regex = re.compile(r"^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð@._-]+$")
+firstandlast_name_regex = re.compile(r"^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$")
+email_regex = re.compile(r"^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð@._-]+$")
 
 '''
 Validation of recipient name.
@@ -28,7 +28,7 @@ def validate_recipient_name(recipient_name: str):
         raise ValueError("You have double space in recipient name")
     if recipient_name.isnumeric():
         raise ValueError("Recipient name should not be numeric")
-    if not recipient_name_regex.match(recipient_name):
+    if not firstandlast_name_regex.match(recipient_name):
         raise ValueError("Recipient name contains invalid character")
     else:
         return recipient_name
@@ -47,7 +47,34 @@ def validate_username(username: str):
         raise ValueError("Username is too short")
     if username.isnumeric():
         raise ValueError("Username should not be numeric")
-    if not username_regex.match(username):
+    if not email_regex.match(username):
         raise ValueError("Username contains invalid character")
     else:
         return username
+    
+
+# Set function for validation of user login
+def validate_user_login(user_login: str):
+    if not user_login.strip():
+        raise ValueError("Empty user login or excessive spaces")
+    if len(user_login) < 2:
+        raise ValueError("User login is too short")
+    if user_login.isnumeric():
+        raise ValueError("User login should not be numeric")
+    if not email_regex.match(user_login):
+        raise ValueError("User login contains invalid character")
+    else:
+        return user_login
+    
+# Set function for validation of inserted sender name for assembling of the signature
+def validate_sender_name(sender_name: str):
+    if not sender_name.strip():
+        raise ValueError("Empty sender signature or excessive spaces")
+    if len(sender_name) < 2:
+        raise ValueError("Sender name is too short")
+    if sender_name.isnumeric():
+        raise ValueError("Signature should not be numeric")
+    if not firstandlast_name_regex.match(sender_name):
+        raise ValueError("Sender name contains invalid character")
+    else:
+        return sender_name
