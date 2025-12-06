@@ -1,8 +1,7 @@
 from validation import (validate_recipient_name, validate_sender_name, validate_user_login, validate_username)
 from template_manager import load_template, assemble_email
 
-def process_user_input(template_name: str, 
-                       recipient_name: str, 
+def process_user_input(recipient_name: str, 
                        username: str, 
                        user_login: str, 
                        sender_name: str) -> str:
