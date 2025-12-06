@@ -1,38 +1,19 @@
-def assemble_email(recipient_name: str, username: str, user_login: str, signature:str) -> str:
-    email_text = f"""
-Dear {recepient_name},
+from pathlib import Path
 
-Your account in {environment_name} has been created. 
+#Variables for relative path to templates directory
+BASE_DIR = Path(__file__).resolve().parent.parent 
+TEMPLATES_DIR = BASE_DIR / "templates"
 
-+------------------------+-------------------------------------+
-| {environment_name}     | {environment_link}                  |
-+------------------------+-------------------------------------+
-| {username}             |  {user_login}                       |
-+------------------------+-------------------------------------+
+#Define function to read the templates
+def load_template(name: str) -> str:
+    path = TEMPLATES_DIR / name
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
+    
+#Usage of the function to open the template 
+template_text = load_template("template_prod_version.txt") #No need to scale it up at the moment
 
-Password sent in a separate email. Please check your mailbox.
-
-If you experience issues with your account, please contact us at ilgar.gurbanov.90@gmail.com for further assistance. 
-
-Best regards,
-{signature}
-"""
-    return email_text.strip()
-
-
-
-
-def process_user_input(recipient_name: str, username: str, user_login: str, sender_name: str) -> str:
-
-    validate_recipient_name(recipient_name)
-    validate_username(username)
-    validate_user_login(user_login)
-    validate_sender_name(sender_name)
-
-    return assemble_email(
-        recipient_name=recipient_name,
-        username=username,
-        user_login=user_login,
-        sender_name=sender_name
-    )
+#Assembling email
+def assemble_email(template: str, **kwargs) -> str:
+    return template.format(**kwargs)
 
