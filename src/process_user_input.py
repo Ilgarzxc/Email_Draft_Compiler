@@ -12,7 +12,7 @@ def process_user_input(recipient_name: str,
     validate_sender_name(sender_name)
 
     #Load selected template
-    template_text=load_template(template_name)
+    template_text=load_template("template_prod_version.txt")
 
     #Assemble email
     return assemble_email(
