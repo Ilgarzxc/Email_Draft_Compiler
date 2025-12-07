@@ -34,23 +34,23 @@ def validate_recipient_name(recipient_name: str):
         return recipient_name
     
 '''
-Validation of username.
-General rule is similar to the recipient name checkup, but username can be equal to the user's email address.
+Validation of recipient_email.
+General rule is similar to the recipient name checkup, but recipient_email can be equal to the user's email address.
 Therefore minor changes can be seen there
 '''
     
-# Set function for username validation
-def validate_username(username: str):
-    if not username.strip():
-        raise ValueError("Empty username or excessive spaces")
-    if len(username) < 2:
-        raise ValueError("Username is too short")
-    if username.isnumeric():
-        raise ValueError("Username should not be numeric")
-    if not email_regex.match(username):
-        raise ValueError("Username contains invalid character")
+# Set function for recipient_email validation
+def validate_recipient_email(recipient_email: str):
+    if not recipient_email.strip():
+        raise ValueError("Empty recipient email or excessive spaces")
+    if len(recipient_email) < 2:
+        raise ValueError("Recipientemail is too short")
+    if recipient_email.isnumeric():
+        raise ValueError("Recipient email should not be numeric")
+    if not email_regex.match(recipient_email):
+        raise ValueError("Recipient email contains invalid character")
     else:
-        return username
+        return recipient_email
     
 
 # Set function for validation of user login

@@ -5,7 +5,7 @@ Your account in {environment_name} has been created.
 +------------------------+-------------------------------------+
 | {environment_name}     | {environment_link}                  |
 +------------------------+-------------------------------------+
-| {username}             |  {user_login}                       |
+| Username               |  {user_login}                       |
 +------------------------+-------------------------------------+
 
 Password sent in a separate email. Please check your mailbox.
