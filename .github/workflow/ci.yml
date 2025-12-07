@@ -1,0 +1,21 @@
+name: CI Pipeline Draft # Name in GitHub Actions
+
+on:
+  push:
+    branches: main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Lint shell scripts
+        run: shellcheck *.sh
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Run test script
+        run: ./test.sh
