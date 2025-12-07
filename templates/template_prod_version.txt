@@ -1,9 +1,9 @@
-Dear {recepient_name},
+Dear {recipient_name},
 
-Your account in {environment_name} has been created. 
+Your account in environment_name has been created. 
 
 +------------------------+-------------------------------------+
-| {environment_name}     | {environment_link}                  |
+| environment_name       | environment_link                    |
 +------------------------+-------------------------------------+
 | Username               |  {user_login}                       |
 +------------------------+-------------------------------------+
@@ -13,4 +13,4 @@ Password sent in a separate email. Please check your mailbox.
 If you experience issues with your account, please contact us at ilgar.gurbanov.90@gmail.com for further assistance. 
 
 Best regards,
-{signature}
+{sender_name}

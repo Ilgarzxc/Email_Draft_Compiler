@@ -5,14 +5,14 @@ from process_user_input import process_user_input
 
 def generate_email():
     try:
-        recipient = entry_recipient.get()
+        recipient_name = entry_recipient.get()
         recipient_email = entry_recipient_email.get()
         user_login = entry_login.get()
         sender = entry_sender.get()
         env = combo_env.get()
 
         # Template
-        email_text = process_user_input(recipient, recipient_email, user_login, sender)
+        email_text = process_user_input(recipient_name, recipient_email, user_login, sender)
 
         text_output.delete("1.0", tk.END)
         text_output.insert(tk.END, email_text)
